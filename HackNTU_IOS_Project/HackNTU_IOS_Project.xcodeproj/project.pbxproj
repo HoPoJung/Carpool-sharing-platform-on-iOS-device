@@ -17,6 +17,7 @@
 		E2DA85CE1DE4A947002A4D95 /* HackNTU_IOS_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA85CD1DE4A947002A4D95 /* HackNTU_IOS_ProjectUITests.swift */; };
 		E41478D31E098BF300C323BF /* X_Logo_NBG.png in Resources */ = {isa = PBXBuildFile; fileRef = E41478D21E098BF300C323BF /* X_Logo_NBG.png */; };
 		E41478D51E09CD6B00C323BF /* logoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41478D41E09CD6B00C323BF /* logoView.swift */; };
+		E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E2DA85CF1DE4A947002A4D95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E41478D21E098BF300C323BF /* X_Logo_NBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = X_Logo_NBG.png; path = Image/X_Logo_NBG.png; sourceTree = "<group>"; };
 		E41478D41E09CD6B00C323BF /* logoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoView.swift; sourceTree = "<group>"; };
+		E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProducerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				E2DA85AC1DE4A946002A4D95 /* ViewController.swift */,
 				E41478D41E09CD6B00C323BF /* logoView.swift */,
 				E2DA85AE1DE4A946002A4D95 /* Main.storyboard */,
+				E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */,
 				E2DA85B41DE4A946002A4D95 /* Assets.xcassets */,
 				E2DA85B61DE4A946002A4D95 /* LaunchScreen.storyboard */,
 				E2DA85B91DE4A946002A4D95 /* Info.plist */,
@@ -275,6 +278,7 @@
 				E2DA85AD1DE4A946002A4D95 /* ViewController.swift in Sources */,
 				E41478D51E09CD6B00C323BF /* logoView.swift in Sources */,
 				E2DA85AB1DE4A946002A4D95 /* AppDelegate.swift in Sources */,
+				E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */,
 				E2DA85B31DE4A946002A4D95 /* HackNTU_IOS_Project.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
