@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationWhenInUseUseageDescription</key>
 	<string>Test</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow this app to record gps data all the time.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

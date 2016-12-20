@@ -15,6 +15,8 @@
 		E2DA85B81DE4A946002A4D95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DA85B61DE4A946002A4D95 /* LaunchScreen.storyboard */; };
 		E2DA85C31DE4A947002A4D95 /* HackNTU_IOS_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA85C21DE4A947002A4D95 /* HackNTU_IOS_ProjectTests.swift */; };
 		E2DA85CE1DE4A947002A4D95 /* HackNTU_IOS_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA85CD1DE4A947002A4D95 /* HackNTU_IOS_ProjectUITests.swift */; };
+		E41478D31E098BF300C323BF /* X_Logo_NBG.png in Resources */ = {isa = PBXBuildFile; fileRef = E41478D21E098BF300C323BF /* X_Logo_NBG.png */; };
+		E41478D51E09CD6B00C323BF /* logoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41478D41E09CD6B00C323BF /* logoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E2DA85C91DE4A947002A4D95 /* HackNTU_IOS_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackNTU_IOS_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DA85CD1DE4A947002A4D95 /* HackNTU_IOS_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackNTU_IOS_ProjectUITests.swift; sourceTree = "<group>"; };
 		E2DA85CF1DE4A947002A4D95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E41478D21E098BF300C323BF /* X_Logo_NBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = X_Logo_NBG.png; path = Image/X_Logo_NBG.png; sourceTree = "<group>"; };
+		E41478D41E09CD6B00C323BF /* logoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,13 @@
 			children = (
 				E2DA85AA1DE4A946002A4D95 /* AppDelegate.swift */,
 				E2DA85AC1DE4A946002A4D95 /* ViewController.swift */,
+				E41478D41E09CD6B00C323BF /* logoView.swift */,
 				E2DA85AE1DE4A946002A4D95 /* Main.storyboard */,
 				E2DA85B41DE4A946002A4D95 /* Assets.xcassets */,
 				E2DA85B61DE4A946002A4D95 /* LaunchScreen.storyboard */,
 				E2DA85B91DE4A946002A4D95 /* Info.plist */,
 				E2DA85B11DE4A946002A4D95 /* HackNTU_IOS_Project.xcdatamodeld */,
+				E41478D21E098BF300C323BF /* X_Logo_NBG.png */,
 			);
 			path = HackNTU_IOS_Project;
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 				E2DA85B81DE4A946002A4D95 /* LaunchScreen.storyboard in Resources */,
 				E2DA85B51DE4A946002A4D95 /* Assets.xcassets in Resources */,
 				E2DA85B01DE4A946002A4D95 /* Main.storyboard in Resources */,
+				E41478D31E098BF300C323BF /* X_Logo_NBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2DA85AD1DE4A946002A4D95 /* ViewController.swift in Sources */,
+				E41478D51E09CD6B00C323BF /* logoView.swift in Sources */,
 				E2DA85AB1DE4A946002A4D95 /* AppDelegate.swift in Sources */,
 				E2DA85B31DE4A946002A4D95 /* HackNTU_IOS_Project.xcdatamodeld in Sources */,
 			);

@@ -12,9 +12,11 @@ import MapKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logoView: logoView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        logoView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
     }
 
     override func didReceiveMemoryWarning() {
