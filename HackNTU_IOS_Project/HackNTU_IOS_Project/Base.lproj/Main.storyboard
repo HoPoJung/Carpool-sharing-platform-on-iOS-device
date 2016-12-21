@@ -225,13 +225,9 @@ Transportation</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-<<<<<<< HEAD
                     <connections>
                         <outlet property="carpoolMapView" destination="f9z-KJ-YHL" id="oYp-2g-bOC"/>
                     </connections>
-=======
-                    <navigationItem key="navigationItem" id="sDg-2R-63h"/>
->>>>>>> 4bcc2dd7495e1a5ead5aa0a1d05c8e86f7aa69db
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWq-WZ-wJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,7 +20,12 @@ class PublicProducerViewController: UIViewController {
     var userLocation:[CLLocation] = []
     var tracedDistance:[CLLocationDistance] = []
     let manager = CLLocationManager()
-    var cumulativeDistance: Float = 0.0
+    var cumulativeDistance:Float = 0.0
+    var cumulativeCoins:Int = 0
+    var timer = Timer()
+    var counterSecond:Int = 0
+    var counterMinute:Int = 0
+    var counterHour:Int = 0
     
     func checkAuthorityOfMap() {
         let status = CLLocationManager.authorizationStatus()
@@ -40,6 +45,7 @@ class PublicProducerViewController: UIViewController {
         manager.delegate = self
         trackerMapView.delegate = self
         distanceLabel.text = "0.0"
+        durationLabel.text = "0:00"
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,11 +55,51 @@ class PublicProducerViewController: UIViewController {
     
     @IBAction func pressStart(_ sender: Any) {
         manager.startUpdatingLocation()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(PublicProducerViewController.changeTime), userInfo: nil, repeats: true)
         print("Start tracking...")
     }
     @IBAction func pressEnd(_ sender: Any) {
         manager.stopUpdatingLocation()
+        timer.invalidate()
         print("Tracking stopped.")
+    }
+    
+    func changeTime() {
+        counterSecond += 1
+        if counterSecond >= 60 {
+            counterMinute += 1
+            counterSecond -= 60
+        }
+        if counterMinute >= 60 {
+            counterHour += 1
+            counterMinute -= 60
+        }
+        if counterHour == 0 && counterMinute == 0 {
+            durationLabel.text = "\(counterSecond)"
+            return
+        }
+        if counterHour == 0 && counterMinute > 0 && counterSecond < 10 {
+            durationLabel.text = "\(counterMinute):0\(counterSecond)"
+            return
+        }
+        else if counterHour == 0 {
+            durationLabel.text = "\(counterMinute):\(counterSecond)"
+            return
+        }
+        if counterHour > 0 && counterMinute >= 10 && counterSecond < 10 {
+            durationLabel.text = "\(counterHour):\(counterMinute):0\(counterSecond)"
+            return
+        }
+        if counterHour > 0 && counterMinute < 10 && counterSecond >= 10 {
+            durationLabel.text = "\(counterHour):0\(counterMinute):\(counterSecond)"
+            return
+        }
+        if counterHour > 0 && counterMinute < 10 && counterSecond < 10 {
+            durationLabel.text = "\(counterHour):0\(counterMinute):0\(counterSecond)"
+            return
+        }
+        durationLabel.text = "\(counterHour):\(counterMinute):\(counterSecond)"
+        return
     }
     
     /*
@@ -90,7 +136,10 @@ extension PublicProducerViewController: MKMapViewDelegate {
         polylineRenderer.lineWidth = 5
         let nowSpeed = userLocation.last!.speed
         if tracedDistance.last != nil {
-            cumulativeDistance += Float(tracedDistance.last!)
+            for dis in tracedDistance {
+                cumulativeDistance += Float(dis)
+            }
+            tracedDistance.removeLast(1)
         }
         
         if nowSpeed < 20 {
