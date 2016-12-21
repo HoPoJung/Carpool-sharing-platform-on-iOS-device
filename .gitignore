@@ -4,6 +4,8 @@
 
 # Xcode
 #
+HackNTU_IOS_Projedct.xcodeproj/
+project.pbxproj
 build/
 *.pbxuser
 !default.pbxuser
