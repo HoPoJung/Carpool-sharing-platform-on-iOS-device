@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUseageDescription</key>
-	<string>Test</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow this app to record gps data all the time.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow record gps data when in use.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

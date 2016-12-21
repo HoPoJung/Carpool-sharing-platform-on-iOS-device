@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1044" y="792.95352323838085"/>
         </scene>
-        <!--View Controller-->
+        <!--Producers View Controller-->
         <scene sceneID="nMy-Ht-7JM">
             <objects>
-                <viewController id="hke-wx-H5b" sceneMemberID="viewController">
+                <viewController id="hke-wx-H5b" customClass="ProducersViewController" customModule="HackNTU_IOS_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="egp-3m-LZE"/>
                         <viewControllerLayoutGuide type="bottom" id="6Dr-9H-2iI"/>
@@ -98,6 +98,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Carpool"/>
                                 <connections>
+                                    <action selector="pressCarpool:" destination="hke-wx-H5b" eventType="touchUpInside" id="quA-pK-n92"/>
                                     <segue destination="Eyz-Z0-J5P" kind="show" id="mE9-tE-iog"/>
                                 </connections>
                             </button>
@@ -109,6 +110,10 @@
                                     <string key="title">Public
 Transportation</string>
                                 </state>
+                                <connections>
+                                    <action selector="pressPublic:" destination="hke-wx-H5b" eventType="touchUpInside" id="Szp-pT-y50"/>
+                                    <segue destination="eml-cn-8HK" kind="modal" identifier="segueToPoblicProducerView" id="Cvb-v2-kS0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,6 +225,7 @@ Transportation</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sDg-2R-63h"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWq-WZ-wJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,28 +262,28 @@ Transportation</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jr-md-y6e">
-                                <rect key="frame" x="56" y="72" width="264" height="121"/>
+                                <rect key="frame" x="55" y="391" width="264" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="coinsEarned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TZ-C3-elo">
-                                <rect key="frame" x="91" y="250" width="193" height="91"/>
+                                <rect key="frame" x="16" y="520" width="171" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-L0-R9K">
-                                <rect key="frame" x="100" y="392" width="184" height="103"/>
+                                <rect key="frame" x="188" y="520" width="171" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njA-xI-lQY">
-                                <rect key="frame" x="97" y="514" width="74" height="51"/>
+                                <rect key="frame" x="55" y="586" width="74" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Start"/>
@@ -286,7 +292,7 @@ Transportation</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcC-Bs-sfa">
-                                <rect key="frame" x="227" y="514" width="74" height="51"/>
+                                <rect key="frame" x="245" y="586" width="74" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="End"/>
@@ -294,13 +300,18 @@ Transportation</string>
                                     <action selector="pressEnd:" destination="eml-cn-8HK" eventType="touchUpInside" id="7il-Wa-GgD"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zj5-xA-65o">
+                                <rect key="frame" x="16" y="20" width="343" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
-                        <color key="backgroundColor" red="0.60918375940000002" green="0.78309565859999997" blue="0.86776253169999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.58540882490000001" green="0.86776253169999995" blue="0.58617243659999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="coinsEarnedLabel" destination="9TZ-C3-elo" id="JBC-Cz-xJF"/>
                         <outlet property="distanceLabel" destination="1Jr-md-y6e" id="Bu1-R5-kNT"/>
                         <outlet property="durationLabel" destination="rYD-L0-R9K" id="8Nk-gc-DIE"/>
+                        <outlet property="trackerMapView" destination="Zj5-xA-65o" id="gUW-t4-Nx6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8Y-Ka-flj" userLabel="First Responder" sceneMemberID="firstResponder"/>
