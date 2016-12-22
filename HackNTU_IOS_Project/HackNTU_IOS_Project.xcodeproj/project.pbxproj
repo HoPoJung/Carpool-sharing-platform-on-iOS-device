@@ -449,11 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = P9FGPZBBW2;
-=======
-				DEVELOPMENT_TEAM = C58JY87RHS;
->>>>>>> 338bb38ec3b3525cb7b6b0891481f2496e7fdea7
 				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = HackNTU_IOS_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -467,11 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = P9FGPZBBW2;
-=======
-				DEVELOPMENT_TEAM = C58JY87RHS;
->>>>>>> 338bb38ec3b3525cb7b6b0891481f2496e7fdea7
 				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = HackNTU_IOS_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
