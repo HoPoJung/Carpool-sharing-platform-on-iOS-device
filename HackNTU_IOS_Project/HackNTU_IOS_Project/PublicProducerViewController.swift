@@ -19,13 +19,15 @@ class PublicProducerViewController: UIViewController {
     
     var userLocation:[CLLocation] = []
     var tracedDistance:[CLLocationDistance] = []
+    var lastTracedIndex: Int = 0
+    var lastTracedDistance: Float = 0.0
     let manager = CLLocationManager()
-    var cumulativeDistance:Float = 0.0
-    var cumulativeCoins:Int = 0
+    var cumulativeDistance: Float = 0.0
+    var cumulativeCoins: Float = 0
     var timer = Timer()
-    var counterSecond:Int = 0
-    var counterMinute:Int = 0
-    var counterHour:Int = 0
+    var counterSecond: Int = 0
+    var counterMinute: Int = 0
+    var counterHour: Int = 0
     
     func checkAuthorityOfMap() {
         let status = CLLocationManager.authorizationStatus()
@@ -46,6 +48,7 @@ class PublicProducerViewController: UIViewController {
         trackerMapView.delegate = self
         distanceLabel.text = "0.0"
         durationLabel.text = "0:00"
+        coinsEarnedLabel.text = "0.00"
     }
 
     override func didReceiveMemoryWarning() {
@@ -135,12 +138,27 @@ extension PublicProducerViewController: MKMapViewDelegate {
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         polylineRenderer.lineWidth = 5
         let nowSpeed = userLocation.last!.speed
+
+//        if tracedDistance.last != nil {
+//            for dis in tracedDistance {
+//                cumulativeDistance += Float(dis)
+//            }
+//            tracedDistance.removeLast(1)
+//        }
         if tracedDistance.last != nil {
-            for dis in tracedDistance {
-                cumulativeDistance += Float(dis)
-            }
-            tracedDistance.removeLast(1)
+            cumulativeDistance += Float(tracedDistance.last!)
         }
+        // Calculate how many coins earned
+        if (lastTracedDistance < cumulativeDistance - 500) && (lastTracedIndex < userLocation.count - 10) {
+            let deltaDistance = Float(cumulativeDistance - lastTracedDistance)
+            let deltaTime = Float(userLocation.last!.timestamp.timeIntervalSince(userLocation[lastTracedIndex].timestamp))
+            let avgSpeed = deltaDistance/deltaTime
+            cumulativeCoins += 100 / avgSpeed
+            coinsEarnedLabel.text = "\(cumulativeCoins)"
+            lastTracedIndex = userLocation.count
+            lastTracedDistance = cumulativeDistance
+        }
+        
         
         if nowSpeed < 20 {
             polylineRenderer.strokeColor = .green
@@ -148,8 +166,7 @@ extension PublicProducerViewController: MKMapViewDelegate {
         else {
             polylineRenderer.strokeColor = .red
         }
-        
-        distanceLabel.text = String(cumulativeDistance)
+        distanceLabel.text = String(format: "%3.2f", cumulativeDistance/1000)
         
         return polylineRenderer
     }
