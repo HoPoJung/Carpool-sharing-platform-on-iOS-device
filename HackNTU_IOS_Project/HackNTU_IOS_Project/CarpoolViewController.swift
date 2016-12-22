@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 
-class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var carpoolMapView: MKMapView!
     
@@ -31,8 +31,8 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         manager.startUpdatingLocation()
         
         carpoolMapView.delegate = self
+        DestinationAddress.delegate = self
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,6 +74,23 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
     }
     
+//    @IBAction func EditFinalDestnation(_ sender: Any) {
+//        let address = self.DestinationAddress.text!
+//        let geoCoder = CLGeocoder()
+//        geoCoder.geocodeAddressString(address, completionHandler: {(placemarks: [CLPlacemark]?, error:NSError?) -> Void in
+//            if error != nil{
+//                print(error)
+//                return}
+//            if placemarks != nil && (placemarks?.count)! > 0{
+//                let placemark = (placemarks?[0])! as CLPlacemark
+//                self.carpoolMapView.addAnnotation(MKPlacemark(placemark: placemark))
+//            }
+//            } as! CLGeocodeCompletionHandler)
+//    }
     
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.DestinationAddress.resignFirstResponder()
+        return true
+    }
 }
