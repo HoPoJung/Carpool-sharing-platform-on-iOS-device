@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3M8-xP-ukj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3M8-xP-ukj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -223,13 +223,13 @@ Transportation</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f9z-KJ-YHL">
-                                <rect key="frame" x="0.0" y="56" width="327" height="313"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="313"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="f9z-KJ-YHL" secondAttribute="height" multiplier="375:409" id="4yu-zQ-Mz5"/>
                                 </constraints>
                             </mapView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyV-K6-Y7t">
-                                <rect key="frame" x="7" y="385" width="307" height="30"/>
+                                <rect key="frame" x="34" y="429" width="307" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="307" id="QSm-4d-J7W"/>
                                     <constraint firstAttribute="height" constant="30" id="UfL-OG-ba2"/>
@@ -238,17 +238,9 @@ Transportation</string>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start position" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hm5-Jw-tx5">
-                                <rect key="frame" x="7" y="426" width="307" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZX4-hk-IMi"/>
-                                    <constraint firstAttribute="width" constant="307" id="lto-P2-tqN"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="qGj-rL-BZY"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="EditFinalDestnation:" destination="Eyz-Z0-J5P" eventType="editingDidEnd" id="6Uu-DY-gpi"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHJ-sV-Vek">
                                 <rect key="frame" x="55" y="474" width="210" height="42"/>
@@ -262,6 +254,17 @@ Transportation</string>
                                 <color key="tintColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Start Matching"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start position" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hm5-Jw-tx5">
+                                <rect key="frame" x="34" y="388" width="307" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZX4-hk-IMi"/>
+                                    <constraint firstAttribute="width" constant="307" id="lto-P2-tqN"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="qGj-rL-BZY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -280,12 +283,14 @@ Transportation</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DestinationAddress" destination="hyV-K6-Y7t" id="KN6-2E-Ef9"/>
+                        <outlet property="StartingAddress" destination="Hm5-Jw-tx5" id="Eoj-FL-Bnm"/>
                         <outlet property="carpoolMapView" destination="f9z-KJ-YHL" id="oYp-2g-bOC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWq-WZ-wJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1933.125" y="1602.4647887323945"/>
+            <point key="canvasLocation" x="1932" y="1601.649175412294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5yz-OF-L3Z">
