@@ -21,6 +21,7 @@
 		E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */; };
 		E4219CA31E0C7486007E6D7D /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4219CA21E0C7486007E6D7D /* data.plist */; };
 		E4219CA51E0C921B007E6D7D /* dataS.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4219CA41E0C921B007E6D7D /* dataS.plist */; };
+		E45324F71E0CC10200349765 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45324F61E0CC10200349765 /* Shared.swift */; };
 		E47CEBAC1E0C16310052F3F2 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CEBAB1E0C16310052F3F2 /* UserData.swift */; };
 		E4CC9BCD1E0A692700996770 /* ProducersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */; };
 		E4CC9BD01E0A6FBE00996770 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC9BCF1E0A6FBD00996770 /* MapKit.framework */; };
@@ -64,6 +65,7 @@
 		E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProducerViewController.swift; sourceTree = "<group>"; };
 		E4219CA21E0C7486007E6D7D /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		E4219CA41E0C921B007E6D7D /* dataS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataS.plist; sourceTree = "<group>"; };
+		E45324F61E0CC10200349765 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		E47CEBAB1E0C16310052F3F2 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducersViewController.swift; sourceTree = "<group>"; };
 		E4CC9BCF1E0A6FBD00996770 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 				E2DA85AA1DE4A946002A4D95 /* AppDelegate.swift */,
 				E2DA85AC1DE4A946002A4D95 /* ViewController.swift */,
 				E47CEBAB1E0C16310052F3F2 /* UserData.swift */,
+				E45324F61E0CC10200349765 /* Shared.swift */,
 				E41478D41E09CD6B00C323BF /* logoView.swift */,
 				E2DA85AE1DE4A946002A4D95 /* Main.storyboard */,
 				E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */,
@@ -240,7 +243,7 @@
 				TargetAttributes = {
 					E2DA85A61DE4A946002A4D95 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = C58JY87RHS;
+						DevelopmentTeam = P9FGPZBBW2;
 						ProvisioningStyle = Automatic;
 					};
 					E2DA85BD1DE4A947002A4D95 = {
@@ -318,6 +321,7 @@
 				E41478D51E09CD6B00C323BF /* logoView.swift in Sources */,
 				E2DA85AB1DE4A946002A4D95 /* AppDelegate.swift in Sources */,
 				E266D8BF1E0A6CF9003FF3E4 /* CarpoolViewController.swift in Sources */,
+				E45324F71E0CC10200349765 /* Shared.swift in Sources */,
 				E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */,
 				E2DA85B31DE4A946002A4D95 /* HackNTU_IOS_Project.xcdatamodeld in Sources */,
 			);
@@ -469,11 +473,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C58JY87RHS;
+				DEVELOPMENT_TEAM = P9FGPZBBW2;
 				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = HackNTU_IOS_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pjHo.HackNTU-IOS-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "yp.HackNTU-IOS-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -483,11 +487,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C58JY87RHS;
+				DEVELOPMENT_TEAM = P9FGPZBBW2;
 				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = HackNTU_IOS_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pjHo.HackNTU-IOS-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "yp.HackNTU-IOS-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        var userData: [String: Any]
+        userData = userFundamentalData.getUserData()
+        Shared.shared.coin = userData["Coins"] as! Double
+        Shared.shared.userName = userData["User"] as! String
+        Shared.shared.distance = userData["Distance"] as! Double
         return true
     }
 

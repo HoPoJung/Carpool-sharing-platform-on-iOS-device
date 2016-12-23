@@ -12,15 +12,18 @@ import MapKit
 
 class ViewController: UIViewController {
     
-    
-
     @IBOutlet weak var logoView: logoView!
+    @IBOutlet weak var coinsLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         logoView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
-        
-        
+        navigationItem.title = Shared.shared.userName
+        coinsLabel.text = String(format: "%4.2f", Shared.shared.coin)
+        distanceLabel.text = String(format: "%3.2f", Shared.shared.distance)
     }
 
     override func didReceiveMemoryWarning() {

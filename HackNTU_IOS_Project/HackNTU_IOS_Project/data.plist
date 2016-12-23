@@ -2,15 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>User</key>
-	<string>Default</string>
-	<key>Cumulated</key>
-	<dict>
-		<key>Distance</key>
-		<integer>10</integer>
-		<key>Coins</key>
-		<string>100</string>
-	</dict>
+	<key>Fundamental</key>
+	<array>
+		<dict>
+			<key>User</key>
+			<string>Default</string>
+			<key>Cumulated</key>
+			<dict>
+				<key>Distance</key>
+				<integer>10</integer>
+				<key>Coins</key>
+				<real>324.87</real>
+			</dict>
+		</dict>
+	</array>
 	<key>Data</key>
 	<array>
 		<dict>

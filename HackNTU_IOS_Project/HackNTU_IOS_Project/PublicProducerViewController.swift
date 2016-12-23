@@ -23,7 +23,7 @@ class PublicProducerViewController: UIViewController {
     var lastTracedDistance: Float = 0.0
     let manager = CLLocationManager()
     var cumulativeDistance: Float = 0.0
-    var cumulativeCoins: Float = 0
+    var cumulativeCoins: Float = 0.0
     var timer = Timer()
     var counterSecond: Int = 0
     var counterMinute: Int = 0
@@ -84,6 +84,9 @@ class PublicProducerViewController: UIViewController {
 
         data.append(newData)
         // historyData.storeAllHistoryData(allData: data)
+        Shared.shared.coin = Shared.shared.coin + Double(cumulativeCoins)
+        Shared.shared.distance = Shared.shared.distance + Double(cumulativeDistance/1000)
+        self.performSegue(withIdentifier: "BackToMain", sender: nil)
     }
     
     func changeTime() {

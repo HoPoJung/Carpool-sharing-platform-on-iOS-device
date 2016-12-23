@@ -48,8 +48,8 @@ class historyData
         
         if let plistDictionary = parsePListFromData(dataLoaded) {
             let dataDictionaries = plistDictionary["Data"] as! [[String: Any]]
-            for dataDictionnary in dataDictionaries {
-                let newData = historyData(dataDictionary: dataDictionnary)
+            for dataDictionary in dataDictionaries {
+                let newData = historyData(dataDictionary: dataDictionary)
                 histData.append(newData)
             }
         }
@@ -105,4 +105,59 @@ class historyData
         }
         return array
     }*/
+}
+
+class userFundamentalData {
+    var user: String?
+    var coins: Double?
+    var distance: Double?
+    
+    init(user: String, coins: Double, distance: Double) {
+        self.user = user
+        self.coins = coins
+        self.distance = distance
+    }
+    
+    init(dataDictionary: [String: Any]) {
+        self.user = dataDictionary["User"] as? String
+        if let cumulatedDic = dataDictionary["Cumulated"] as? [String: Any] {
+            self.distance = cumulatedDic["Distance"] as? Double
+            self.coins = cumulatedDic["Coins"] as? Double
+        }
+    }
+    
+    static func getUserData() -> Dictionary<String, Any> {
+        var tempDics = [userFundamentalData]()
+        let dataFile = Bundle.main.path(forResource: "data", ofType: "plist")
+        let dataFileURL = URL(fileURLWithPath: dataFile!)
+        let dataLoaded = try? Data(contentsOf: dataFileURL)
+        if let plistDictionary = parsePListFromData(dataLoaded) {
+            let dataDictionaries = plistDictionary["Fundamental"] as! [[String: Any]]
+            for dataDic in dataDictionaries {
+                let newDic = userFundamentalData(dataDictionary: dataDic)
+                tempDics.append(newDic)
+            }
+        }
+        
+        
+        let userDic = [
+            "User": tempDics[0].user!,
+            "Coins": tempDics[0].coins!,
+            "Distance": tempDics[0].distance!
+        ] as [String : Any]
+        return userDic
+    }
+    
+    static func parsePListFromData(_ plistData: Data?) -> [String: AnyObject]? {
+        if let data = plistData {
+            do {
+                let plistDictionary = try PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as! [String: AnyObject]
+                return plistDictionary
+            }catch let error as NSError {
+                print("Error processing plist data: \(error.localizedDescription)")
+            }
+        }
+        return nil
+    }
+
 }
