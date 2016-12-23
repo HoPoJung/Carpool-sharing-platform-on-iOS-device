@@ -30,9 +30,19 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
         
-        carpoolMapView.delegate = self
-        DestinationAddress.delegate = self
+        self.carpoolMapView.delegate = self
+        self.DestinationAddress.delegate = self
+        self.StartingAddress.delegate = self
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,8 +99,4 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 //    }
     
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.DestinationAddress.resignFirstResponder()
-        return true
     }
-}
