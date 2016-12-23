@@ -16,6 +16,7 @@ class PublicProducerViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var coinsEarnedLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var endBtn: UIButton!
     
     var userLocation:[CLLocation] = []
     var tracedDistance:[CLLocationDistance] = []
@@ -35,6 +36,7 @@ class PublicProducerViewController: UIViewController {
         "Bus": 0.0,
         "Subway": 0.0
     ]
+    var ableToEnd: Bool = false
     
     func checkAuthorityOfMap() {
         let status = CLLocationManager.authorizationStatus()
@@ -47,7 +49,7 @@ class PublicProducerViewController: UIViewController {
         super.viewDidLoad()
         data = historyData.getAllHistoryData()
         
-        
+        self.endBtn.isEnabled = false
         print("Ready for Tracking")
 //        manager.requestWhenInUseAuthorization()
         manager.requestAlwaysAuthorization()
@@ -69,13 +71,16 @@ class PublicProducerViewController: UIViewController {
     @IBAction func pressStart(_ sender: Any) {
         manager.startUpdatingLocation()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(PublicProducerViewController.changeTime), userInfo: nil, repeats: true)
+        self.endBtn.isEnabled = true
+        self.ableToEnd = false
+        self.endBtn.setTitle("Pause", for: .normal)
         print("Start tracking...")
     }
     @IBAction func pressEnd(_ sender: Any) {
         manager.stopUpdatingLocation()
         timer.invalidate()
         print("Tracking stopped.")
-        
+        if ableToEnd {
         let newData = historyData(date: "2016-12-23", coins: Double(cumulativeCoins), distance: Double(cumulativeDistance/1000), walk: distanceByTools["Walk"]!, bicycle: distanceByTools["Bicycle"]!, bus: distanceByTools["Bus"]!, subway: distanceByTools["Subway"]!)
         newData.walk = newData.walk!/1000
         newData.bicycle = newData.bicycle!/1000
@@ -87,6 +92,12 @@ class PublicProducerViewController: UIViewController {
         Shared.shared.coin = Shared.shared.coin + Double(cumulativeCoins)
         Shared.shared.distance = Shared.shared.distance + Double(cumulativeDistance/1000)
         self.performSegue(withIdentifier: "BackToMain", sender: nil)
+        }
+        else
+        {
+            self.endBtn.setTitle("End", for: .normal)
+            ableToEnd = true
+        }
     }
     
     func changeTime() {
