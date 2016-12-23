@@ -30,6 +30,12 @@ class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLoca
         startLocationManager.desiredAccuracy = kCLLocationAccuracyBest
         startLocationManager.startUpdatingLocation()
         
+        let date = Date()
+        let dateFormat = DateFormatter()
+        dateFormat.timeStyle = .medium
+        self.currentTimeLabel.text = dateFormat.string(from: date)
+        
+        
         startLocationManager.delegate = self
         consumerMapView.delegate = self
         self.destinationPositionTextField.delegate = self
@@ -43,6 +49,7 @@ class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLoca
     
     func checkDestinationAndLocate() {
         self.destinationPositionTextField.text = "20730 Valley Green Dr Cupertino, CA 95014 United States"
+//        self.destinationPositionTextField.text = "台北市大安區羅斯福路四段一號"
         let address = self.destinationPositionTextField.text!
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address, completionHandler:
@@ -124,12 +131,30 @@ class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLoca
         return renderer
     }
     
+    func moveViewForKeyboard(textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveViewForKeyboard(textField: textField, moveDistance: -250, up: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveViewForKeyboard(textField: textField, moveDistance: -250, up: false)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
