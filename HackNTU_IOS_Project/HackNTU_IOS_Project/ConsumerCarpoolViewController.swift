@@ -10,17 +10,23 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
+class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var searchForPairingView: UIView!
     @IBOutlet weak var consumerMapView: MKMapView!
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var startPositionTextField: UITextField!
     @IBOutlet weak var destinationPositionTextField: UITextField!
+    @IBOutlet weak var timeIntervalPicker: UIPickerView!
+    @IBOutlet weak var timeLeftLabel: UILabel!
     
+    let pickerArray = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
     let startLocationManager = CLLocationManager()
     var userLocations: [CLLocation] = []
     var destinationCoord: CLLocationCoordinate2D?
     var startCoord: CLLocationCoordinate2D?
+    var timer = Timer()
+    var leftTime: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +40,15 @@ class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLoca
         let dateFormat = DateFormatter()
         dateFormat.timeStyle = .medium
         self.currentTimeLabel.text = dateFormat.string(from: date)
+        self.timeLeftLabel.text = "5"
         
+        moveViewForLoading(up: false)
         
         startLocationManager.delegate = self
         consumerMapView.delegate = self
         self.destinationPositionTextField.delegate = self
+        self.timeIntervalPicker.delegate = self
+        self.timeIntervalPicker.dataSource = self
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -120,6 +130,7 @@ class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLoca
                 let rect = route.polyline.boundingMapRect
                 self.consumerMapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
             }
+            moveViewForLoading(up: true)
         }
     }
 
@@ -142,12 +153,55 @@ class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLoca
         UIView.commitAnimations()
     }
     
+    func moveViewForLoading(up: Bool) {
+        let moveDuration = 0.3
+        let moveDistance = self.searchForPairingView.bounds.maxY
+        let movement: CGFloat = up ? -moveDistance : moveDistance
+        
+        UIView.beginAnimations("animateLoadingView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.searchForPairingView.frame = self.searchForPairingView.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+        if up {
+            self.leftTime = Int(self.timeLeftLabel.text!)! * 60
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ConsumerCarpoolViewController.countDown), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func countDown() {
+        if self.leftTime >= 0 {
+            let minute = self.leftTime / 60
+            let second = self.leftTime % 60
+            self.timeLeftLabel.text = "\(minute):\(second)"
+            self.leftTime -= 1
+            return
+        }
+        self.timer.invalidate()
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveViewForKeyboard(textField: textField, moveDistance: -250, up: true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         moveViewForKeyboard(textField: textField, moveDistance: -250, up: false)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(pickerArray[row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.timeLeftLabel.text = String(pickerArray[row])
     }
     
     override func didReceiveMemoryWarning() {

@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="width" constant="188" id="4ap-RL-0hP"/>
                                     <constraint firstAttribute="height" constant="647" id="vyi-eo-uKK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="500"/>
                                 <state key="normal" title="Consumer">
                                     <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="height" constant="40" id="5s4-RC-45x"/>
                                     <constraint firstAttribute="width" constant="120" id="zzg-GG-qdx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -71,7 +71,7 @@
                                     <constraint firstAttribute="height" constant="40" id="eP5-Iv-EwX"/>
                                     <constraint firstAttribute="width" constant="120" id="ilf-0l-oon"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -145,27 +145,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkd-Ti-ZBi">
-                                <rect key="frame" x="0.0" y="20" width="198.5" height="647"/>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
+                                <color key="backgroundColor" red="0.0" green="0.76689756417671329" blue="0.78152912734123658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="bkd-Ti-ZBi" secondAttribute="height" multiplier="185:603" id="2DG-uS-Poz"/>
+                                    <constraint firstAttribute="height" constant="667" id="4hv-rz-TWK"/>
+                                    <constraint firstAttribute="width" constant="188" id="9Wu-zH-xZc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Carpool"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="550"/>
+                                <state key="normal" title="Carpool">
+                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressCarpool:" destination="hke-wx-H5b" eventType="touchUpInside" id="quA-pK-n92"/>
                                     <segue destination="Eyz-Z0-J5P" kind="show" id="mE9-tE-iog"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9M-GS-LLo">
-                                <rect key="frame" x="206.5" y="20" width="195.5" height="647"/>
+                                <rect key="frame" x="188" y="0.0" width="187" height="667"/>
+                                <color key="backgroundColor" red="0.93112553801166031" green="0.9994240403175354" blue="0.41152134512643729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="l9M-GS-LLo" secondAttribute="height" multiplier="182:603" id="t0A-cv-t5k"/>
+                                    <constraint firstAttribute="height" constant="667" id="0Bc-gs-DLN"/>
+                                    <constraint firstAttribute="width" constant="187" id="ELA-KN-EAp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="500" maxX="0.0" maxY="0.0"/>
                                 <state key="normal">
                                     <string key="title">Public
 Transportation</string>
+                                    <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="pressPublic:" destination="hke-wx-H5b" eventType="touchUpInside" id="Szp-pT-y50"/>
@@ -175,13 +183,14 @@ Transportation</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Dr-9H-2iI" firstAttribute="top" secondItem="l9M-GS-LLo" secondAttribute="bottom" id="15m-ht-m5B"/>
-                            <constraint firstItem="bkd-Ti-ZBi" firstAttribute="leading" secondItem="lKM-w1-Nee" secondAttribute="leading" id="8cS-9j-JeH"/>
-                            <constraint firstItem="l9M-GS-LLo" firstAttribute="top" secondItem="egp-3m-LZE" secondAttribute="bottom" id="Jfy-mW-iRp"/>
-                            <constraint firstAttribute="trailing" secondItem="l9M-GS-LLo" secondAttribute="trailing" id="WbL-G2-6eL"/>
-                            <constraint firstItem="bkd-Ti-ZBi" firstAttribute="top" secondItem="egp-3m-LZE" secondAttribute="bottom" id="Y7X-LW-g8V"/>
-                            <constraint firstItem="l9M-GS-LLo" firstAttribute="leading" secondItem="bkd-Ti-ZBi" secondAttribute="trailing" constant="8" id="fw5-C2-GqS"/>
-                            <constraint firstItem="6Dr-9H-2iI" firstAttribute="top" secondItem="bkd-Ti-ZBi" secondAttribute="bottom" id="mS8-EP-L6K"/>
+                            <constraint firstItem="l9M-GS-LLo" firstAttribute="top" secondItem="lKM-w1-Nee" secondAttribute="top" id="1F2-NS-obU"/>
+                            <constraint firstItem="6Dr-9H-2iI" firstAttribute="top" secondItem="l9M-GS-LLo" secondAttribute="bottom" id="5qx-oF-dJI"/>
+                            <constraint firstItem="l9M-GS-LLo" firstAttribute="leading" secondItem="bkd-Ti-ZBi" secondAttribute="trailing" id="LsB-Ef-w3j"/>
+                            <constraint firstItem="bkd-Ti-ZBi" firstAttribute="leading" secondItem="lKM-w1-Nee" secondAttribute="leading" id="aIm-Hy-seP"/>
+                            <constraint firstItem="l9M-GS-LLo" firstAttribute="leading" secondItem="bkd-Ti-ZBi" secondAttribute="trailing" id="dsH-ku-cEH"/>
+                            <constraint firstItem="6Dr-9H-2iI" firstAttribute="top" secondItem="bkd-Ti-ZBi" secondAttribute="bottom" id="nCw-yo-gba"/>
+                            <constraint firstAttribute="trailing" secondItem="l9M-GS-LLo" secondAttribute="trailing" id="yuN-gE-sen"/>
+                            <constraint firstItem="bkd-Ti-ZBi" firstAttribute="top" secondItem="lKM-w1-Nee" secondAttribute="top" id="z1V-88-WkU"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -212,7 +221,7 @@ Transportation</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27L-E6-zxX">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27L-E6-zxX" userLabel="Time Interval Picker View">
                                 <rect key="frame" x="174" y="450" width="185" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
@@ -236,7 +245,7 @@ Transportation</string>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQj-x3-M8b">
                                 <rect key="frame" x="82" y="604" width="210" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Start Matching"/>
@@ -244,6 +253,24 @@ Transportation</string>
                                     <action selector="navigateAndMatchBtn:" destination="Yag-5X-c2I" eventType="touchUpInside" id="521-Vl-w0Q"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-cM-pLG" customClass="waitView" customModule="HackNTU_IOS_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="450" width="375" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DI0-DP-HKO">
+                                        <rect key="frame" x="177" y="98" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeLeft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cV-lm-qbL">
+                                        <rect key="frame" x="87" y="30" width="200" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -251,7 +278,10 @@ Transportation</string>
                         <outlet property="consumerMapView" destination="nhZ-Kq-5tg" id="dl2-w3-FO6"/>
                         <outlet property="currentTimeLabel" destination="LBR-yw-17I" id="dD7-I0-12b"/>
                         <outlet property="destinationPositionTextField" destination="di0-7v-TU7" id="hhJ-4l-3xb"/>
+                        <outlet property="searchForPairingView" destination="BUM-cM-pLG" id="lHI-Iz-Fy4"/>
                         <outlet property="startPositionTextField" destination="2OS-6N-Myy" id="h8g-G1-stF"/>
+                        <outlet property="timeIntervalPicker" destination="27L-E6-zxX" id="Etd-kd-vsj"/>
+                        <outlet property="timeLeftLabel" destination="3cV-lm-qbL" id="mbA-Zd-Swc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Lp-Jp-pKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
