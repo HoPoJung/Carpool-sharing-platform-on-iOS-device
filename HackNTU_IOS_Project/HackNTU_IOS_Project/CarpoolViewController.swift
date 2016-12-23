@@ -31,7 +31,7 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         manager.startUpdatingLocation()
         
         carpoolMapView.delegate = self
-        DestinationAddress.delegate = self
+        self.DestinationAddress.delegate = self
         
     }
 
