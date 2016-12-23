@@ -25,6 +25,7 @@
 		E47CEBAC1E0C16310052F3F2 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CEBAB1E0C16310052F3F2 /* UserData.swift */; };
 		E4CC9BCD1E0A692700996770 /* ProducersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */; };
 		E4CC9BD01E0A6FBE00996770 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC9BCF1E0A6FBD00996770 /* MapKit.framework */; };
+		E4E522041E0D2AB400C17A3C /* ConsumerCarpoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E522031E0D2AB400C17A3C /* ConsumerCarpoolViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		E47CEBAB1E0C16310052F3F2 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducersViewController.swift; sourceTree = "<group>"; };
 		E4CC9BCF1E0A6FBD00996770 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E4E522031E0D2AB400C17A3C /* ConsumerCarpoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerCarpoolViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,13 +125,12 @@
 			children = (
 				E2DA85AA1DE4A946002A4D95 /* AppDelegate.swift */,
 				E2DA85AC1DE4A946002A4D95 /* ViewController.swift */,
-				E47CEBAB1E0C16310052F3F2 /* UserData.swift */,
-				E45324F61E0CC10200349765 /* Shared.swift */,
 				E41478D41E09CD6B00C323BF /* logoView.swift */,
 				E2DA85AE1DE4A946002A4D95 /* Main.storyboard */,
 				E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */,
 				E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */,
 				E266D8BE1E0A6CF9003FF3E4 /* CarpoolViewController.swift */,
+				E4E522031E0D2AB400C17A3C /* ConsumerCarpoolViewController.swift */,
 				E2DA85B41DE4A946002A4D95 /* Assets.xcassets */,
 				E2DA85B61DE4A946002A4D95 /* LaunchScreen.storyboard */,
 				E2DA85B91DE4A946002A4D95 /* Info.plist */,
@@ -160,6 +161,8 @@
 		E47CEBA81E0BFF570052F3F2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E47CEBAB1E0C16310052F3F2 /* UserData.swift */,
+				E45324F61E0CC10200349765 /* Shared.swift */,
 				E41478D21E098BF300C323BF /* X_Logo_NBG.png */,
 				E4219CA21E0C7486007E6D7D /* data.plist */,
 				E4219CA41E0C921B007E6D7D /* dataS.plist */,
@@ -324,6 +327,7 @@
 				E45324F71E0CC10200349765 /* Shared.swift in Sources */,
 				E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */,
 				E2DA85B31DE4A946002A4D95 /* HackNTU_IOS_Project.xcdatamodeld in Sources */,
+				E4E522041E0D2AB400C17A3C /* ConsumerCarpoolViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

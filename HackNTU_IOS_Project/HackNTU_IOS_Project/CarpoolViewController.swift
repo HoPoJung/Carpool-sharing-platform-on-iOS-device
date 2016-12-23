@@ -36,10 +36,10 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
-        
         self.carpoolMapView.delegate = self
         self.DestinationAddress.delegate = self
         self.StartingAddress.delegate = self
+
         
     }
     
