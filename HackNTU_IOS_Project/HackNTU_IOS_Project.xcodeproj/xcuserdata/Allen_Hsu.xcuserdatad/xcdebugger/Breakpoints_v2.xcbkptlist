@@ -10,13 +10,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HackNTU_IOS_Project/PublicProducerViewController.swift"
-            timestampString = "504095600.924025"
+            timestampString = "504141747.332767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "mapView(_:rendererFor:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HackNTU_IOS_Project/PublicProducerViewController.swift"
+            timestampString = "504131217.321389"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HackNTU_IOS_Project/UserData.swift"
+            timestampString = "504136097.67721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "init(dataDictionary:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HackNTU_IOS_Project.historyData.init (dataDictionary : Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; HackNTU_IOS_Project.historyData"
+                  moduleName = "HackNTU_IOS_Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allen_Hsu/Documents/Swift%20lecture/HackNTU_IOS_Project/HackNTU_IOS_Project/HackNTU_IOS_Project/UserData.swift"
+                  timestampString = "504136097.903313"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1373">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HackNTU_IOS_Project.historyData.init (dataDictionary : Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; HackNTU_IOS_Project.historyData"
+                  moduleName = "HackNTU_IOS_Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Allen_Hsu/Documents/Swift%20lecture/HackNTU_IOS_Project/HackNTU_IOS_Project/HackNTU_IOS_Project/UserData.swift"
+                  timestampString = "504136097.905867"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1689">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

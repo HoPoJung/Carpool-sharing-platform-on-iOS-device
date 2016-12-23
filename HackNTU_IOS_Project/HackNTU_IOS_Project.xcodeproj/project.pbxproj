@@ -19,6 +19,10 @@
 		E41478D31E098BF300C323BF /* X_Logo_NBG.png in Resources */ = {isa = PBXBuildFile; fileRef = E41478D21E098BF300C323BF /* X_Logo_NBG.png */; };
 		E41478D51E09CD6B00C323BF /* logoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41478D41E09CD6B00C323BF /* logoView.swift */; };
 		E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */; };
+		E4219CA31E0C7486007E6D7D /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4219CA21E0C7486007E6D7D /* data.plist */; };
+		E4219CA51E0C921B007E6D7D /* dataS.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4219CA41E0C921B007E6D7D /* dataS.plist */; };
+		E47CEBAA1E0C08B30052F3F2 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = E47CEBA91E0C08B30052F3F2 /* data.json */; };
+		E47CEBAC1E0C16310052F3F2 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CEBAB1E0C16310052F3F2 /* UserData.swift */; };
 		E4CC9BCD1E0A692700996770 /* ProducersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */; };
 		E4CC9BD01E0A6FBE00996770 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC9BCF1E0A6FBD00996770 /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +63,10 @@
 		E41478D21E098BF300C323BF /* X_Logo_NBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = X_Logo_NBG.png; path = Image/X_Logo_NBG.png; sourceTree = "<group>"; };
 		E41478D41E09CD6B00C323BF /* logoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoView.swift; sourceTree = "<group>"; };
 		E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProducerViewController.swift; sourceTree = "<group>"; };
+		E4219CA21E0C7486007E6D7D /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		E4219CA41E0C921B007E6D7D /* dataS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataS.plist; sourceTree = "<group>"; };
+		E47CEBA91E0C08B30052F3F2 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = Data/data.json; sourceTree = "<group>"; };
+		E47CEBAB1E0C16310052F3F2 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducersViewController.swift; sourceTree = "<group>"; };
 		E4CC9BCF1E0A6FBD00996770 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -115,6 +123,7 @@
 			children = (
 				E2DA85AA1DE4A946002A4D95 /* AppDelegate.swift */,
 				E2DA85AC1DE4A946002A4D95 /* ViewController.swift */,
+				E47CEBAB1E0C16310052F3F2 /* UserData.swift */,
 				E41478D41E09CD6B00C323BF /* logoView.swift */,
 				E2DA85AE1DE4A946002A4D95 /* Main.storyboard */,
 				E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */,
@@ -124,7 +133,7 @@
 				E2DA85B61DE4A946002A4D95 /* LaunchScreen.storyboard */,
 				E2DA85B91DE4A946002A4D95 /* Info.plist */,
 				E2DA85B11DE4A946002A4D95 /* HackNTU_IOS_Project.xcdatamodeld */,
-				E41478D21E098BF300C323BF /* X_Logo_NBG.png */,
+				E47CEBA81E0BFF570052F3F2 /* Resource */,
 			);
 			path = HackNTU_IOS_Project;
 			sourceTree = "<group>";
@@ -145,6 +154,17 @@
 				E2DA85CF1DE4A947002A4D95 /* Info.plist */,
 			);
 			path = HackNTU_IOS_ProjectUITests;
+			sourceTree = "<group>";
+		};
+		E47CEBA81E0BFF570052F3F2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E47CEBA91E0C08B30052F3F2 /* data.json */,
+				E41478D21E098BF300C323BF /* X_Logo_NBG.png */,
+				E4219CA21E0C7486007E6D7D /* data.plist */,
+				E4219CA41E0C921B007E6D7D /* dataS.plist */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		E4CC9BCE1E0A6FBD00996770 /* Frameworks */ = {
@@ -265,9 +285,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4219CA51E0C921B007E6D7D /* dataS.plist in Resources */,
+				E4219CA31E0C7486007E6D7D /* data.plist in Resources */,
 				E2DA85B81DE4A946002A4D95 /* LaunchScreen.storyboard in Resources */,
 				E2DA85B51DE4A946002A4D95 /* Assets.xcassets in Resources */,
 				E2DA85B01DE4A946002A4D95 /* Main.storyboard in Resources */,
+				E47CEBAA1E0C08B30052F3F2 /* data.json in Resources */,
 				E41478D31E098BF300C323BF /* X_Logo_NBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +318,7 @@
 			files = (
 				E4CC9BCD1E0A692700996770 /* ProducersViewController.swift in Sources */,
 				E2DA85AD1DE4A946002A4D95 /* ViewController.swift in Sources */,
+				E47CEBAC1E0C16310052F3F2 /* UserData.swift in Sources */,
 				E41478D51E09CD6B00C323BF /* logoView.swift in Sources */,
 				E2DA85AB1DE4A946002A4D95 /* AppDelegate.swift in Sources */,
 				E266D8BF1E0A6CF9003FF3E4 /* CarpoolViewController.swift in Sources */,

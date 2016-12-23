@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         logoView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
         
+        
     }
 
     override func didReceiveMemoryWarning() {

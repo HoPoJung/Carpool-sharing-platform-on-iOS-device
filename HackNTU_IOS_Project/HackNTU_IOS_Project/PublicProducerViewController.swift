@@ -28,6 +28,13 @@ class PublicProducerViewController: UIViewController {
     var counterSecond: Int = 0
     var counterMinute: Int = 0
     var counterHour: Int = 0
+    var data = [historyData]()
+    var distanceByTools = [
+        "Walk": 0.0,
+        "Bicycle": 0.0,
+        "Bus": 0.0,
+        "Subway": 0.0
+    ]
     
     func checkAuthorityOfMap() {
         let status = CLLocationManager.authorizationStatus()
@@ -38,6 +45,9 @@ class PublicProducerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        data = historyData.getAllHistoryData()
+        
+        
         print("Ready for Tracking")
 //        manager.requestWhenInUseAuthorization()
         manager.requestAlwaysAuthorization()
@@ -65,6 +75,15 @@ class PublicProducerViewController: UIViewController {
         manager.stopUpdatingLocation()
         timer.invalidate()
         print("Tracking stopped.")
+        
+        let newData = historyData(date: "2016-12-23", coins: Double(cumulativeCoins), distance: Double(cumulativeDistance/1000), walk: distanceByTools["Walk"]!, bicycle: distanceByTools["Bicycle"]!, bus: distanceByTools["Bus"]!, subway: distanceByTools["Subway"]!)
+        newData.walk = newData.walk!/1000
+        newData.bicycle = newData.bicycle!/1000
+        newData.bus = newData.bus!/1000
+        newData.subway = newData.subway!/1000
+
+        data.append(newData)
+        // historyData.storeAllHistoryData(allData: data)
     }
     
     func changeTime() {
@@ -138,15 +157,17 @@ extension PublicProducerViewController: MKMapViewDelegate {
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         polylineRenderer.lineWidth = 5
         let nowSpeed = userLocation.last!.speed
-
+        
 //        if tracedDistance.last != nil {
 //            for dis in tracedDistance {
 //                cumulativeDistance += Float(dis)
 //            }
 //            tracedDistance.removeLast(1)
 //        }
+        var deltaDis: Float = 0.0
         if tracedDistance.last != nil {
-            cumulativeDistance += Float(tracedDistance.last!)
+            deltaDis = Float(tracedDistance.last!)
+            cumulativeDistance += deltaDis
         }
         // Calculate how many coins earned
         if (lastTracedDistance < cumulativeDistance - 500) && (lastTracedIndex < userLocation.count - 10) {
@@ -160,11 +181,25 @@ extension PublicProducerViewController: MKMapViewDelegate {
         }
         
         
-        if nowSpeed < 20 {
+        if nowSpeed < 5 {
             polylineRenderer.strokeColor = .green
+            let oriDis = distanceByTools["Walk"]
+            distanceByTools["Walk"] = Double(deltaDis) + oriDis!
+        }
+        else if nowSpeed < 10 {
+            polylineRenderer.strokeColor = .yellow
+            let oriDis = distanceByTools["Bicycle"]
+            distanceByTools["Bicycle"] = Double(deltaDis) + oriDis!
+        }
+        else if nowSpeed < 20 {
+            polylineRenderer.strokeColor = .orange
+            let oriDis = distanceByTools["Bus"]
+            distanceByTools["Bus"] = Double(deltaDis) + oriDis!
         }
         else {
             polylineRenderer.strokeColor = .red
+            let oriDis = distanceByTools["Subway"]
+            distanceByTools["Subway"] = Double(deltaDis) + oriDis!
         }
         distanceLabel.text = String(format: "%3.2f", cumulativeDistance/1000)
         

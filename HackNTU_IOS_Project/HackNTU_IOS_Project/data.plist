@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>User</key>
+	<string>Default</string>
+	<key>Cumulated</key>
+	<dict>
+		<key>Distance</key>
+		<integer>10</integer>
+		<key>Coins</key>
+		<string>100</string>
+	</dict>
+	<key>Data</key>
+	<array>
+		<dict>
+			<key>Date</key>
+			<string>2016-12-21</string>
+			<key>Coins</key>
+			<real>3.12</real>
+			<key>Distance</key>
+			<integer>5</integer>
+			<key>Tools</key>
+			<dict>
+				<key>Walk</key>
+				<integer>3</integer>
+				<key>Bicycle</key>
+				<integer>2</integer>
+				<key>Bus</key>
+				<integer>0</integer>
+				<key>Subway</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>Date</key>
+			<string>2016-12-22</string>
+			<key>Coins</key>
+			<real>6.46</real>
+			<key>Distance</key>
+			<integer>8</integer>
+			<key>Tools</key>
+			<dict>
+				<key>Walk</key>
+				<real>0.5</real>
+				<key>Bicycle</key>
+				<integer>0</integer>
+				<key>Bus</key>
+				<integer>2</integer>
+				<key>Subway</key>
+				<real>3.5</real>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

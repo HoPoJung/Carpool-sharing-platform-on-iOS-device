@@ -1,0 +1,32 @@
+{
+	"User": "Default",
+	"Cumulative": {
+		"Distance": 10,
+		"Coins": 100
+		},
+	"Data":
+	[
+		{
+			"Date": "2016-12-21",
+			"Coins": 3.12,
+			"Distance": 5,
+			"Tools": {
+				"Walk": 2,
+				"Bicycle": 3,
+				"Bus": 0,
+				"Subway": 0
+			}
+		},
+		{
+			"Date": "2016-12-22",
+			"Coins": 4.54,
+			"Distance": 6,
+			"Tools": {
+				"Walk": 0.5,
+				"Bicycle": 0,
+				"Bus": 2,
+				"Subway": 3.5
+			}
+		}
+	],
+}
