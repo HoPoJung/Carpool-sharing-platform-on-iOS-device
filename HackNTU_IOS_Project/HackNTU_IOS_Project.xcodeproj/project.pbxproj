@@ -246,7 +246,7 @@
 				TargetAttributes = {
 					E2DA85A61DE4A946002A4D95 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = P9FGPZBBW2;
+						DevelopmentTeam = C58JY87RHS;
 						ProvisioningStyle = Automatic;
 					};
 					E2DA85BD1DE4A947002A4D95 = {
@@ -477,11 +477,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P9FGPZBBW2;
+				DEVELOPMENT_TEAM = C58JY87RHS;
 				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = HackNTU_IOS_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yp.HackNTU-IOS-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "pjHo.HackNTU-IOS-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -491,11 +491,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P9FGPZBBW2;
+				DEVELOPMENT_TEAM = C58JY87RHS;
 				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = HackNTU_IOS_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yp.HackNTU-IOS-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "pjHo.HackNTU-IOS-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
