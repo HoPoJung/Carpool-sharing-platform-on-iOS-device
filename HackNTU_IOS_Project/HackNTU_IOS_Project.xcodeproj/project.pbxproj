@@ -21,6 +21,7 @@
 		E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */; };
 		E4219CA31E0C7486007E6D7D /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4219CA21E0C7486007E6D7D /* data.plist */; };
 		E4219CA51E0C921B007E6D7D /* dataS.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4219CA41E0C921B007E6D7D /* dataS.plist */; };
+		E435DD481E0DD1D00002D26B /* PassengersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435DD471E0DD1D00002D26B /* PassengersTableViewController.swift */; };
 		E45324F71E0CC10200349765 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45324F61E0CC10200349765 /* Shared.swift */; };
 		E47CEBAC1E0C16310052F3F2 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CEBAB1E0C16310052F3F2 /* UserData.swift */; };
 		E4CC9BCD1E0A692700996770 /* ProducersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */; };
@@ -66,6 +67,7 @@
 		E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProducerViewController.swift; sourceTree = "<group>"; };
 		E4219CA21E0C7486007E6D7D /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		E4219CA41E0C921B007E6D7D /* dataS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataS.plist; sourceTree = "<group>"; };
+		E435DD471E0DD1D00002D26B /* PassengersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengersTableViewController.swift; sourceTree = "<group>"; };
 		E45324F61E0CC10200349765 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		E47CEBAB1E0C16310052F3F2 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E4CC9BCC1E0A692700996770 /* ProducersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducersViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				E41478D61E09EB2D00C323BF /* PublicProducerViewController.swift */,
 				E266D8BE1E0A6CF9003FF3E4 /* CarpoolViewController.swift */,
 				E4E522031E0D2AB400C17A3C /* ConsumerCarpoolViewController.swift */,
+				E435DD471E0DD1D00002D26B /* PassengersTableViewController.swift */,
 				E2DA85B41DE4A946002A4D95 /* Assets.xcassets */,
 				E2DA85B61DE4A946002A4D95 /* LaunchScreen.storyboard */,
 				E2DA85B91DE4A946002A4D95 /* Info.plist */,
@@ -327,6 +330,7 @@
 				E45324F71E0CC10200349765 /* Shared.swift in Sources */,
 				E41478D71E09EB2D00C323BF /* PublicProducerViewController.swift in Sources */,
 				E2DA85B31DE4A946002A4D95 /* HackNTU_IOS_Project.xcdatamodeld in Sources */,
+				E435DD481E0DD1D00002D26B /* PassengersTableViewController.swift in Sources */,
 				E4E522041E0D2AB400C17A3C /* ConsumerCarpoolViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

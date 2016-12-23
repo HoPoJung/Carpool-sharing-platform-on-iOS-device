@@ -367,11 +367,56 @@ Carbon</string>
                         <outlet property="DestinationAddress" destination="hyV-K6-Y7t" id="KN6-2E-Ef9"/>
                         <outlet property="StartingAddress" destination="Hm5-Jw-tx5" id="Eoj-FL-Bnm"/>
                         <outlet property="carpoolMapView" destination="f9z-KJ-YHL" id="oYp-2g-bOC"/>
+                        <segue destination="BMP-TX-bHS" kind="show" identifier="ShowPassengers" id="WND-SL-oO1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWq-WZ-wJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1932" y="1601.649175412294"/>
+        </scene>
+        <!--Passengers Table View Controller-->
+        <scene sceneID="kfw-Dt-PJP">
+            <objects>
+                <tableViewController id="BMP-TX-bHS" customClass="PassengersTableViewController" customModule="HackNTU_IOS_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q8Q-lQ-fqx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" textLabel="tfc-Zv-YIC" detailTextLabel="CcU-vN-nwj" style="IBUITableViewCellStyleSubtitle" id="UTZ-fJ-BGN">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UTZ-fJ-BGN" id="w9L-2F-JBZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tfc-Zv-YIC">
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CcU-vN-nwj">
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BMP-TX-bHS" id="PbK-eR-x0n"/>
+                            <outlet property="delegate" destination="BMP-TX-bHS" id="ZyD-p5-xTF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDu-HO-JJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2718" y="1603"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5yz-OF-L3Z">
