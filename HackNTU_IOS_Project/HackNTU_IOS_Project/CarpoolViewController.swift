@@ -12,6 +12,8 @@ import CoreLocation
 
 
 class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
+    
+    
 
     @IBOutlet weak var carpoolMapView: MKMapView!
     
@@ -20,6 +22,9 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     let manager = CLLocationManager()
     
     var myLocations: [CLLocation] = []
+    
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +41,14 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,7 +81,6 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             else{
                 let placemark = (placemarks?.last)! as CLPlacemark
                 let address: String = "\(placemark.name!) \(placemark.country!) \(placemark.administrativeArea!) \(placemark.subAdministrativeArea!) \(placemark.locality!)"
-                print(address)
                 self.StartingAddress.text = address
         }
     
@@ -98,5 +102,31 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 //            } as! CLGeocodeCompletionHandler)
 //    }
     
+    @IBAction func finishEditingLocation(_ sender: Any) {
+        
+        let location = CLLocation(latitude:25.020050, longitude:121.533870)
+        self.addAnnotation(location: location)
+        let goecoder = CLGeocoder()
+        goecoder.reverseGeocodeLocation(location, completionHandler:{(placemarks, e) -> Void in
+            if e != nil{
+                print("Error: " + (e?.localizedDescription)!)
+            }
+            else{
+                let placemark = (placemarks?.last)! as CLPlacemark
+                let address: String = "\(placemark.name!) \(placemark.country!) \(placemark.administrativeArea!) \(placemark.subAdministrativeArea!) \(placemark.locality!)"
+                print(address)
+                self.DestinationAddress.text = address
+            }
+            
+        })
+
+        
+    }
+    func addAnnotation(location: CLLocation) {
+        let annotation = MKPointAnnotation()
+        annotation.title = "test annotation"
+        annotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        carpoolMapView.addAnnotation(annotation)
+    }
 
     }
