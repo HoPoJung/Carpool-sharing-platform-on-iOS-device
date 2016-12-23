@@ -23,7 +23,9 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     var myLocations: [CLLocation] = []
     
-
+    var startingPoint = CLLocationCoordinate2D()
+    var endPoint = CLLocationCoordinate2D()
+    
     
     
     override func viewDidLoad() {
@@ -81,6 +83,7 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             else{
                 let placemark = (placemarks?.last)! as CLPlacemark
                 let address: String = "\(placemark.name!) \(placemark.country!) \(placemark.administrativeArea!) \(placemark.subAdministrativeArea!) \(placemark.locality!)"
+                self.startingPoint = location.coordinate
                 self.StartingAddress.text = address
         }
     
@@ -105,6 +108,7 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBAction func finishEditingLocation(_ sender: Any) {
         
         let location = CLLocation(latitude:25.020050, longitude:121.533870)
+        
         self.addAnnotation(location: location)
         let goecoder = CLGeocoder()
         goecoder.reverseGeocodeLocation(location, completionHandler:{(placemarks, e) -> Void in
@@ -115,10 +119,39 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 let placemark = (placemarks?.last)! as CLPlacemark
                 let address: String = "\(placemark.name!) \(placemark.country!) \(placemark.administrativeArea!) \(placemark.subAdministrativeArea!) \(placemark.locality!)"
                 print(address)
+                self.endPoint = location.coordinate
                 self.DestinationAddress.text = address
             }
             
         })
+        let sourcePlaceMark = MKPlacemark(coordinate: startingPoint, addressDictionary: nil)
+        let destinationPlaceMark = MKPlacemark(coordinate: endPoint, addressDictionary: nil)
+        
+        
+        let sourceMapItem = MKMapItem(placemark: sourcePlaceMark)
+        let destinationMapItem = MKMapItem(placemark: destinationPlaceMark)
+        
+        let directionRequest = MKDirectionsRequest()
+        directionRequest.source = sourceMapItem
+        directionRequest.destination = destinationMapItem
+        directionRequest.transportType = .automobile
+        
+        let direction = MKDirections(request: directionRequest)
+        
+        direction.calculate{(response, error) -> Void in
+            guard let response = response else {
+                if let error = error {
+                    print ("Error \(error)")
+                }
+                return
+            }
+            
+            let route = response.routes[0]
+            self.carpoolMapView.add((route.polyline), level: MKOverlayLevel.aboveRoads)
+            
+            let rect = route.polyline.boundingMapRect
+            self.carpoolMapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+        }
 
         
     }
@@ -128,5 +161,14 @@ class CarpoolViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         annotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         carpoolMapView.addAnnotation(annotation)
     }
-
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.red
+        renderer.lineWidth = 4.0
+        
+        return renderer
     }
+    
+
+}
