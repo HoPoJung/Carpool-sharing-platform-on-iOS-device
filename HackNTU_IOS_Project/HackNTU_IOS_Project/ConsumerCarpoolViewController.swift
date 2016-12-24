@@ -133,6 +133,10 @@ class ConsumerCarpoolViewController: UIViewController, MKMapViewDelegate, CLLoca
             moveViewForLoading(up: true)
         }
     }
+    
+    @IBAction func pressCancel(_ sender: Any) {
+        self.performSegue(withIdentifier: "BackToMain", sender: self)
+    }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
